@@ -1,3 +1,6 @@
+#14
+
+
 ### CADASTRO
 POST http://localhost:5000/user/cadastro
 Content-Type: application/json
@@ -8,6 +11,7 @@ Content-Type: application/json
     "password": "italoaaa12345",
     "avatar": "https://dog.ceo/api/breeds/image/random"
 }
+
 
 ### Login
 
