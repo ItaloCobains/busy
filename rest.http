@@ -1,0 +1,43 @@
+### CADASTRO
+POST http://localhost:5000/user/cadastro
+Content-Type: application/json
+
+{
+    "name": "Italoaaaa",
+    "email": "Italoaaa@gmail.com",
+    "password": "italoaaa12345",
+    "avatar": "https://dog.ceo/api/breeds/image/random"
+}
+
+### Login
+
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+    "name": "Italoaaaa",
+    "email": "Italoaaa@gmail.com",
+    "password": "italoaaa12345",
+    "avatar": "https://dog.ceo/api/breeds/image/random"
+}
+
+### Data
+
+GET http://localhost:5000/infos/data
+Content-Type: application/json
+
+### Inset Data
+
+POST http://localhost:5000/infos/insertData
+Content-Type: application/json
+
+{
+    "Plano": "Plano Simples",
+    "Valor": "12x12,90",
+    "Vantagens": ["Vendas"]
+}
+
+### test
+
+GET http://localhost:5000/user
+Content-Type: application/json
