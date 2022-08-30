@@ -7,7 +7,7 @@ import { UserModule } from './user/user.module';
     UserModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: '0.0.0.0',
       port: 5432,
       username: 'postgres',
       password: 'docker',
