@@ -6,14 +6,7 @@ import { UserModule } from './user/user.module';
   imports: [
     UserModule,
     TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: '0.0.0.0',
-      port: 5432,
-      username: 'postgres',
-      password: 'docker',
-      database: 'postgres',
-      autoLoadEntities: true,
-      synchronize: true,
+      
     }),
   ],
   controllers: [],

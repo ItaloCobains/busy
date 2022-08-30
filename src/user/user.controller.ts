@@ -19,7 +19,7 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get('list')
-  findAll(@Res() response) {
+  findAll() {
     return this.userService.findAll();
   }
 
