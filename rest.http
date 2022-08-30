@@ -43,5 +43,5 @@ Content-Type: application/json
 
 ### test
 
-GET http://localhost:5000/user
+GET http://localhost:5000/user/test
 Content-Type: application/json
