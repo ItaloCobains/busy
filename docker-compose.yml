@@ -23,7 +23,7 @@ services:
       - .docker/dbdata:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=docker
-      - POSTGRES_USERNAME=nodeapp
+      - POSTGRES_DB=nodeapp
 
   pgadmin:
     image: dpage/pgadmin4
