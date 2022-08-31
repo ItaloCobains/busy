@@ -1,4 +1,6 @@
+/.docker/dbdata
 .docker/dbdata
+dbdata
 
 # compiled output
 /dist
