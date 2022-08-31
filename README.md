@@ -1,53 +1,56 @@
-# REST API PARA ADIMINISTRAÇÃO DE USUARIOS
+# REST API PARA GERENCIAMENTO DE USUARIOS
 
-This is a bare-bones example of a Sinatra application providing a REST
-API to a DataMapper-backed model.
+Esta é uma api robusta feita usando o framework NestJS, banco de dados Postgres, typeorm, migrations, Docker e TDD.
 
-The entire application is contained within the `app.rb` file.
-
-`config.ru` is a minimal Rack configuration for unicorn.
-
-`run-tests.sh` runs a simplistic test and generates the API
-documentation below.
-
-It uses `run-curl-tests.rb` which runs each command defined in
-`commands.yml`.
+Caso for testar lembre de preencher o .env
 
 ## Install
 
-    bundle install
+    npm i 
+    # ou 
+    yarn add
 
-## Run the app
+## Rodar o projeto com Docker
 
-    unicorn -p 7000
+    make build
 
-## Run the tests
+## rodas os tests
 
-    ./run-tests.sh
+    npm run test
+    # ou 
+    yarn run test
 
 # REST API
 
-The REST API to the example app is described below.
+Descrição de rotas
 
-## Get list of Things
+## Lista todos os user
 
 ### Request
 
-`GET /thing/`
+`GET /list`
 
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/
+    curl -i -H 'Accept: application/json' http://localhost:5000/list/
 
 ### Response
 
     HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
+    X-Powered-By: Express
+    Access-Control-Allow-Origin: *
+    Content-Type: application/json; charset=utf-8
     Content-Length: 2
+    ETag: W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+    Date: Wed, 31 Aug 2022 16:22:08 GMT
+    Connection: close
 
     []
 
+
+
+
+
+    
+<!-- 
 ## Create a new Thing
 
 ### Request
@@ -345,5 +348,4 @@ The REST API to the example app is described below.
     HTTP/1.1 204 No Content
     Date: Thu, 24 Feb 2011 12:36:33 GMT
     Status: 204 No Content
-    Connection: close
-
+    Connection: close -->
