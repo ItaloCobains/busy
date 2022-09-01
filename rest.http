@@ -1,47 +1,36 @@
-#22
-
-
-### CADASTRO
-POST http://localhost:5000/user/cadastro
-Content-Type: application/json
-
-{
-    "name": "Italoaaaa",
-    "email": "Italoaaa@gmail.com",
-    "password": "italoaaa12345",
-    "avatar": "https://dog.ceo/api/breeds/image/random"
-}
-
-
-### Login
-
-POST http://localhost:5000/user/login
-Content-Type: application/json
-
-{
-    "name": "Italoaaaa",
-    "email": "Italoaaa@gmail.com",
-    "password": "italoaaa12345",
-    "avatar": "https://dog.ceo/api/breeds/image/random"
-}
-
-### Data
-
-GET http://localhost:5000/infos/data
-Content-Type: application/json
-
-### Inset Data
-
-POST http://localhost:5000/infos/insertData
-Content-Type: application/json
-
-{
-    "Plano": "Plano Simples",
-    "Valor": "12x12,90",
-    "Vantagens": ["Vendas"]
-}
-
-### test
+### All User
 
 GET http://localhost:5000/user/list
+Content-Type: application/json
+
+### One User
+
+GET http://localhost:5000/user/1f70dbcd-e42e-40b4-a1f3-032690597dfd
+Content-Type: application/json
+
+### Create a new User
+
+POST http://localhost:5000/user
+Content-Type: application/json
+
+{
+  "name": "Italo",
+  "email": "italo@gmail.com",
+  "password": "password",
+  "avatar": "http://google.api/13412343"
+}
+
+### Update a User
+PATCH http://localhost:5000/user/1f70dbcd-e42e-40b4-a1f3-032690597dfd
+Content-Type: application/json
+
+{
+  "name": "Italo Brito",
+  "email": "italo@gmail.com",
+  "password": "password",
+  "avatar": "http://google.api/13412343"
+}
+
+### Delete a User
+DELETE http://localhost:5000/user/1f70dbcd-e42e-40b4-a1f3-032690597dfd
 Content-Type: application/json
