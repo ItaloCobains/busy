@@ -1,11 +1,19 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import { HttpStatus, INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { UserModule } from '../../src/user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CreateUserDto } from '../../src/user/dto/create-user-dto';
 
 describe('User: /user', () => {
   let app: INestApplication;
+
+  const user: CreateUserDto = {
+    name: 'Italo',
+    email: 'italo@gmail.com',
+    password: 'ITALO12345',
+    avatar: 'http://avatar.com',
+  };
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -32,5 +40,10 @@ describe('User: /user', () => {
     await app.close();
   });
 
-  it.todo('Create POST /user');
+  it('Create POST /user', () => {
+    return request(app.getHttpServer())
+      .post('/user')
+      .send(user as CreateUserDto)
+      .expect(HttpStatus.CREATED);
+  });
 });
