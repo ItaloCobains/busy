@@ -1,9 +1,16 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BeforeInsert,
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
 
-@Entity('users')
+@Entity('user')
 export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   name: string;
@@ -16,4 +23,16 @@ export class User {
 
   @Column()
   avatar: string;
+
+  @CreateDateColumn({ type: 'timestamp' })
+  created_at: Date;
+
+  @BeforeInsert()
+  generateId() {
+    if (this.id) {
+      return;
+    }
+
+    this.id = uuidv4().toString();
+  }
 }
