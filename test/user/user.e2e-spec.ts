@@ -50,6 +50,12 @@ describe('User: /user', () => {
     return request(app.getHttpServer())
       .post('/user')
       .send(user as CreateUserDto)
-      .expect(HttpStatus.CREATED);
+      .expect(HttpStatus.CREATED)
+      .then(({ body }) => {
+        const expectedUser = jasmine.objectContaining({
+          ...user,
+        });
+        expect(body).toEqual(expectedUser);
+      });
   });
 });
