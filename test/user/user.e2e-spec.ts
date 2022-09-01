@@ -1,11 +1,18 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
 import * as request from 'supertest';
 import { UserModule } from '../../src/user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 describe('User: /user', () => {
   let app: INestApplication;
+
+  const user = {
+    name: 'ItaloCobains',
+    email: 'italo@gmail.com',
+    password: 'italo12345',
+    avatar: 'http://avatar.com',
+  };
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -25,6 +32,13 @@ describe('User: /user', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    app.useGlobalPipes(
+      new ValidationPipe({
+        whitelist: true,
+        forbidNonWhitelisted: true,
+        transform: true,
+      }),
+    );
     await app.init();
   });
 
