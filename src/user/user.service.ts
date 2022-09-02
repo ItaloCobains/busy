@@ -3,6 +3,7 @@ import {
   HttpStatus,
   Injectable,
   NotFoundException,
+  Inject
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -13,7 +14,7 @@ import { User } from './entities/user.entity';
 @Injectable()
 export class UserService {
   constructor(
-    @InjectRepository(User)
+    @Inject('USER_REPOSITORY')
     private readonly userRepository: Repository<User>,
   ) {}
 
@@ -22,7 +23,7 @@ export class UserService {
   }
 
   findOne(id: string) {
-    const user = this.userRepository.findOne(id);
+    const user = 2; //this.userRepository.findOne(id);
     if (!user) {
       throw new NotFoundException(`User ${id} not found`);
     }
@@ -49,12 +50,12 @@ export class UserService {
   }
 
   async remove(id: string) {
-    const user = await this.userRepository.findOne(id);
+    const user = 2; //await this.userRepository.findOne(id);
 
     if (!user) {
       throw new NotFoundException(`User ${id} not found`);
     }
 
-    return this.userRepository.remove(user);
+    //return this.userRepository.remove(user);
   }
 }
