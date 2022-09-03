@@ -6,10 +6,8 @@ import { User } from './entities/user.entity';
 
 @Injectable()
 export class UserService {
-  constructor(
-    @Inject('USER_REPOSITORY')
-    private readonly userRepository: Repository<User>,
-  ) {}
+  @Inject('USER_REPOSITORY')
+  private readonly userRepository: Repository<User>;
 
   async findAll() {
     return this.userRepository.find();
