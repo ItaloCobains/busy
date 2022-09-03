@@ -44,15 +44,15 @@ export class UserService {
     return this.userRepository.save(user);
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     const user = await this.userRepository.findOne({
-      where: { id: id.toString() },
+      where: { id },
     });
 
     if (!user) {
       throw new NotFoundException(`User ${id} not found`);
     }
 
-    //return this.userRepository.remove(user);
+    return this.userRepository.remove(user);
   }
 }

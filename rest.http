@@ -5,7 +5,7 @@ Content-Type: application/json
 
 ### One User
 
-GET http://localhost:5000/user/1f70dbcd-e42e-40b4-a1f3-032690597dfd
+GET http://localhost:5000/user/2b666847-549e-42d4-a61c-f43d2b43e445
 Content-Type: application/json
 
 ### Create a new User
@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 
 ### Update a User
-PATCH http://localhost:5000/user/1f70dbcd-e42e-40b4-a1f3-032690597dfd
+PATCH http://localhost:5000/user/2b666847-549e-42d4-a61c-f43d2b43e445
 Content-Type: application/json
 
 {
@@ -32,5 +32,5 @@ Content-Type: application/json
 }
 
 ### Delete a User
-DELETE http://localhost:5000/user/1f70dbcd-e42e-40b4-a1f3-032690597dfd
+DELETE http://localhost:5000/user/2b666847-549e-42d4-a61c-f43d2b43e445
 Content-Type: application/json
